@@ -16,6 +16,10 @@ Before you begin, ensure you have met the following requirements:
 You have installed the latest version of Python. You can install it either from here: [Official Website](https://www.python.org/downloads/) (recommended) or use the Microsoft Store here: [Microsoft Store](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7?activetab=pivot:overviewtab)
 You have a Windows/Linux/Mac machine.
 
+### Add the Excel File
+You have to move the Excel file you want to use this with into the project folder. You can do this by dragging the file into the folder.
+![Drag and Drop](image-6.png)
+
 ## Installing Python
 To install Python using the Official Website, follow these steps:
 
@@ -72,12 +76,12 @@ Row: The row in which the table start. -> Number
 1. = Adress Column
 2. = Distance Column
 3. = Row
-![alt text](image-3.png)
+#### ![Letters and Numbers](image-3.png)
 File Name: The name of the Excel file. -> Name
-![alt text](image-4.png)
+#### ![Excel File Name](image-4.png)
 Table Name: The name of the table. -> Name
 You can let it empty if your Excel Table is called "Tabelle1". But only if it is called "Tabelle1". Amount of tables doesnt matter.
-![alt text](image-5.png)
+#### ![Table File Name](image-5.png)
 
 
 

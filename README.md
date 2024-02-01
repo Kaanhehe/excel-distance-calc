@@ -87,7 +87,7 @@ You can let it empty if your Excel Table is called "Tabelle1". But only if it is
 
 ## Contact
 If you want to contact me you can reach me at kaanhehe@users.noreply.github.com # idk if it works
-Or if you have a problem just open a issue here on github.
+##### Or if you have a problem just open a issue here on github.
 
 ## License
 This project uses the following license: [LICENSE](LICENSE). -> MIT License

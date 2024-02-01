@@ -9,7 +9,7 @@ You first have to download the project. You can do this by clicking the green "C
 
 ### Unzip
 To unzip the project, follow these steps:
-
+[If you really dont know how click here](https://www.youtube.com/watch?v=XAFwU2BQwHE)
 ### Requirements
 Before you begin, ensure you have met the following requirements:
 
@@ -42,7 +42,7 @@ cd C:\Users\user\Documents\Projects\Excel-Distance-Calc
 ```
 #### If its in your Downloads try:
 ```bash
-cd C:\Users\%inputyourusername%\Downloads\Excel-Distance-Calc
+cd C:\Users\%inputyourusername%\Downloads\excel-distance-calc-main
 ```
 Dont forget to replace %inputyourusername% with your windows username.
 Here you you can find your username:

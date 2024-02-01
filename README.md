@@ -69,7 +69,7 @@ python main.py
 You will be asked to enter the following information:
 Starting Point: The starting point of the journey. -> Adresse
 Try copying the address from Google Maps, it will be easier.
-![alt text](image-2.png)
+### ![Adress Google Maps](image-2.png)
 Adresse Column: The column in which the addresses are located. -> Letter
 Distance Column: The column in which the distances should be written. -> Letter
 Row: The row in which the table start. -> Number

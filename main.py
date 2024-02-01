@@ -10,8 +10,8 @@ try:
     Distance_column = sys.argv[2]
     Adresse_column_Label = sys.argv[3]
 except IndexError:
-    starting_point = input("Enter starting point: ")
-    Distance_column = ("Enter distance column: ")
+    starting_point = input("Enter starting point: ") # In den Baumgärten 12, 63225 Langen (Hessen)
+    Distance_column = input("Enter distance column: ")
     Adresse_column_Label = input("Enter address column label: ")
 
 # Read the Excel file

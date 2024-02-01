@@ -24,9 +24,9 @@ No guarantees that the Microsoft Store version will work (Microsoft 🤷🏿‍�
 To run this project, follow these steps:
 
 ### Locate the project directory
-Open a terminal/command prompt. (Windows: Win+R, type "cmd", press enter. Linux/Mac: Ctrl+Alt+T)
-Navigate to the project directory. (Windows: cd path\to\project, Linux/Mac: cd path/to/project)
-In my case:
+#### Open a terminal/command prompt. (Windows: Win+R, type "cmd", press enter. Linux/Mac: Ctrl+Alt+T)
+#### Navigate to the project directory. (Windows: cd path\to\project, Linux/Mac: cd path/to/project)
+#### In my case:
 ```bash
 cd C:\Users\user\Documents\Projects\ExcelDistanceCalculator
 ```

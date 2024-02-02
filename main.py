@@ -39,6 +39,8 @@ except IndexError:
     file_name = input("Enter file name(without .xlsx): ") + ".xlsx" or "Mappe1.xlsx"
     sheet_name = input("Enter sheet name (or leave it empty): ") or "Tabelle1"
 
+### MAIN ###
+
 # Check if the file exists
 if not os.path.isfile(file_name):
     print(f"Error: '{file_name}' file does not exist.")
@@ -58,6 +60,8 @@ if response.status_code != 200:
 def calculate_distance(starting_point, destination_addresses):
     url = "https://maps.googleapis.com/maps/api/distancematrix/json"
 
+    destination_addresses = [address for address in destination_addresses if not isinstance(address, float)]
+    destination_addresses = [address for address in destination_addresses if address]
     params = {
         "origins": starting_point,
         "destinations": "|".join(destination_addresses),
@@ -70,25 +74,28 @@ def calculate_distance(starting_point, destination_addresses):
     distances = []
     for i, row in enumerate(data["rows"]):
         for j, element in enumerate(row["elements"]):
-            distance = element["distance"]["text"]
+            distance = element["distance"]["text"].replace(" km", "")
+            print(f"Distance from {starting_point} to {destination_addresses[i]}: {distance}")
             distances.append(distance)
     return distances[0] if distances else None
 
 # Convert the letter of the column to its corresponding index
 column_index = string.ascii_uppercase.index(adress_column.upper())
+distance_index = string.ascii_uppercase.index(distance_column.upper())
 
 # Calculate the distance for each row
 ### I get some warning here, but it works fine so idk, I'll just ignore it
 if mode == "1":
-    df['Distance'] = df.apply(lambda row: pd.Series([calculate_distance(starting_point, [row[column_index]])]), axis=1) # type: ignore
+    df[distance_index] = df.apply(lambda row: pd.Series([calculate_distance(starting_point, [row[column_index]])]), axis=1) # type: ignore
 if mode == "2":
     starting_index = string.ascii_uppercase.index(starting_point_adress_column.upper()) # type: ignore
-    df['Distance'] = df.apply(lambda row: pd.Series([calculate_distance([row[starting_index]], [row[column_index]])]), axis=1) # type: ignore
+    df[distance_index] = df.apply(lambda row: pd.Series([calculate_distance([row[starting_index]], [row[column_index]])]), axis=1) # type: ignore
 # Insert the calculated distance into the Distance column
 for cell in ws[distance_column]: # type: ignore
     if cell.row > 1 and cell.value is None:
-        cell.value = df.iloc[cell.row -2, df.columns.get_loc('Distance')] # -1 cuz first row is header and -1 cuz excel starts at 1 and df at 0
+        if cell.row > 1 and cell.row - 1 < len(df):
+            cell.value = df.iloc[cell.row - 3, df.columns.get_loc(distance_index)]
 
-wb.save('Mappe1.xlsx')
+wb.save(file_name)
 
 print("Done!!!")

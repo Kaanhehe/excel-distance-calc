@@ -74,7 +74,7 @@ def calculate_distance(starting_point, destination_addresses):
     distances = []
     for i, row in enumerate(data["rows"]):
         for j, element in enumerate(row["elements"]):
-            distance = element["distance"]["text"].replace(" km", "")
+            distance = element["distance"]["text"].replace(" km", "").replace(".", ",")
             print(f"Distance from {starting_point} to {destination_addresses[i]}: {distance}")
             distances.append(distance)
     return distances[0] if distances else None
